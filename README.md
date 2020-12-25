@@ -11,13 +11,11 @@ In /usr/lib/rooter/signal/modemsignal.sh , towards the bottom of the file, find 
 And add this if statement block right under it. 
 
 
-```
-if [ -e $ROOTER/modem-led.sh ]; then
- $ROOTER/modem-led.sh $CSQ_PER
-fi
-```
 
-                                                                                                                                                      `
+    if [ -e $ROOTER/modem-led.sh ]; then
+    $ROOTER/modem-led.sh $CSQ_PER
+    fi
+
 
 This will call a script at /usr/lib/rooter/modem-led.sh with the CSQ Percentage value as the first parameter.
 
