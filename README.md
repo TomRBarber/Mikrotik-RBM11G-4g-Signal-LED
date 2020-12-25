@@ -9,12 +9,14 @@ The RBM11G, LEDs from left to right are 4, 3, 2, 1, 0.
 
 In /usr/lib/rooter/signal/modemsignal.sh , towards the bottom of the file, find the "while [ 1 = 1 ]; do" loop (I don't know the line number, but its towards the bottom of the page)
 And add this if statement block right under it. 
+
+
+```
+if [ -e $ROOTER/modem-led.sh ]; then
+ $ROOTER/modem-led.sh $CSQ_PER
+fi
 ```
 
-	if [ -e $ROOTER/modem-led.sh ]; then
-		$ROOTER/modem-led.sh $CSQ_PER
-	fi
-```
                                                                                                                                                       `
 
 This will call a script at /usr/lib/rooter/modem-led.sh with the CSQ Percentage value as the first parameter.
